@@ -1,9 +1,8 @@
-package tests;
+package methods;
 
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +12,7 @@ import selenium.driver.WebDriverUtility;
 
 public class GoogleSearch {
     
-    @Test
-    public void googleSearchAodocs(){
+    public static WebDriver googleSearch(String searchTexString){
         WebDriver driver = WebDriverUtility.getWebDriver(Browser.CHROME);
 		
         driver.get("https://www.google.com/");
@@ -23,7 +21,7 @@ public class GoogleSearch {
         WebElement rejectAllCookiesElement = driver.findElement(By.cssSelector("#W0wltc"));
         rejectAllCookiesElement.click(); 
 
-        String searchText = "AODocs";
+        String searchText = searchTexString;
 
         WebElement searchBoxElement = driver.findElement(By.cssSelector("#APjFqb"));
         searchBoxElement.sendKeys(searchText + Keys.ENTER);
@@ -31,9 +29,9 @@ public class GoogleSearch {
         String searchResultTitleText = searchText;
 
         List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'" + searchResultTitleText + "')]"));
-        Assertions.assertTrue(list.size() > 0,"Text not found!");
+        Assertions.assertTrue(list.size() > 0,"ERROR: Text not found!");
 
-        driver.quit();
+        return driver;
         
     }
 }
