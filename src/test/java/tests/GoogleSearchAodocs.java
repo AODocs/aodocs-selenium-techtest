@@ -12,4 +12,10 @@ public class GoogleSearchAodocs {
         WebDriver driver = GoogleSearch.googleSearch("AODocs");
         driver.quit();
     }
+
+    @Test
+    public void googleSearchAodocsDescription(){
+        WebDriver driver = GoogleSearch.googleSearch("google workspace ai document management system");
+        driver.quit();
+    }
 }
