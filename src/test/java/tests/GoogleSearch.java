@@ -8,17 +8,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import selenium.driver.Browser;
+import selenium.driver.WebDriverUtility;
 
 public class GoogleSearch {
     
     @Test
     public void googleSearchAodocs(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-
+        WebDriver driver = WebDriverUtility.getWebDriver(Browser.CHROME);
+		
         driver.get("https://www.google.com/");
+
+        // CSS for Reject All on Google Search without login:
+        WebElement rejectAllCookiesElement = driver.findElement(By.cssSelector("#W0wltc"));
+        rejectAllCookiesElement.click(); 
 
         String searchText = "AODocs";
 
@@ -29,5 +32,8 @@ public class GoogleSearch {
 
         List<WebElement> list = driver.findElements(By.xpath("//*[contains(text(),'" + searchResultTitleText + "')]"));
         Assertions.assertTrue(list.size() > 0,"Text not found!");
+
+        driver.quit();
+        
     }
 }
