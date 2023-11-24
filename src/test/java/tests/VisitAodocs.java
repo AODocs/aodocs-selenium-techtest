@@ -5,11 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 import methods.GoogleSearch;
 import methods.OpenGoogleSearchResult;
+import methods.VisitWebpageDirect;
 
 public class VisitAodocs {
 
     @Test
-    public void visitAodocsFromGoogleSearch(){
+    public void displayAodocsHomepageFromGoogleSearch(){
         String searchTextString = "aodocs";
         WebDriver driver = GoogleSearch.googleSearch(searchTextString);
         OpenGoogleSearchResult.openAodocsResult(driver, searchTextString);
@@ -17,8 +18,8 @@ public class VisitAodocs {
     }
 
     @Test
-    public void visitAodocsDirect(){
-
-    }
-    
+    public void displayAodocsHomepageDirect(){
+        WebDriver driver = VisitWebpageDirect.visitAodocsHomepage();
+        driver.quit();
+    }  
 }
