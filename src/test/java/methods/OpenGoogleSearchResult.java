@@ -18,7 +18,8 @@ public class OpenGoogleSearchResult {
         String subDomain = "www";
         String domainName = searchString;
         String topLevelDomain = "com/";
-        Boolean compareResult = Compare.validateUrl(driver, protocol, subDomain, domainName, topLevelDomain).getResult();
-        String aodocsUrlString = Compare.validateUrl(driver, protocol, subDomain, domainName, topLevelDomain).getUrl();
+        Boolean compareResult = Compare.validateUrl(driver, protocol, subDomain, domainName, topLevelDomain, null, null, null).getResult();
+        String aodocsUrlString = Compare.validateUrl(driver, protocol, subDomain, domainName, topLevelDomain, null, null, null).getUrl();
         Assertions.assertTrue(compareResult, "ERROR: URL is not " + aodocsUrlString + ". URL is " + driver.getCurrentUrl());
-}}
+    }
+}
