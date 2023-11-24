@@ -8,13 +8,13 @@ import methods.GoogleSearch;
 public class GoogleSearchAodocs {
     
     @Test
-    public void googleSearchAodocs(){
+    public void displayAodocsGoogleSearchResults(){
         WebDriver driver = GoogleSearch.googleSearch("AODocs");
         driver.quit();
     }
 
     @Test
-    public void googleSearchAodocsDescription(){
+    public void displayAodocsDescriptionGoogleSearchResults(){
         WebDriver driver = GoogleSearch.googleSearch("google workspace ai document management system");
         driver.quit();
     }
