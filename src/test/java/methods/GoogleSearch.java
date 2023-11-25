@@ -7,14 +7,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import selenium.driver.Browser;
-import selenium.driver.WebDriverUtility;
 
 public class GoogleSearch {
     
-    public static WebDriver googleSearch(String searchTexString){
-        WebDriver driver = WebDriverUtility.getWebDriver(Browser.CHROME);
-		
+    public static WebDriver googleSearch(WebDriver driver, String searchTexString){
+        
         driver.get("https://www.google.com/");
 
         // CSS for Reject All on Google Search without login:
