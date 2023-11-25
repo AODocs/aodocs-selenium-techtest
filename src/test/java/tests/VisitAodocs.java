@@ -5,9 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
-import methods.GoogleSearch;
-import methods.OpenGoogleSearchResult;
-import methods.VisitWebpageDirect;
+import functions.GoogleSearch;
+import functions.OpenGoogleSearchResult;
+import functions.VisitWebpageDirect;
 import selenium.driver.Browser;
 import selenium.driver.WebDriverUtility;
 
