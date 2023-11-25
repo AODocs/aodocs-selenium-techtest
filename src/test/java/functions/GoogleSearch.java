@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 public class GoogleSearch {
     
-    public static WebDriver googleSearch(WebDriver driver, String searchTexString){
+    public static WebDriver googleSearch(WebDriver driver, String searchTextString){
         
         driver.get("https://www.google.com/");
 
@@ -18,7 +18,7 @@ public class GoogleSearch {
         WebElement rejectAllCookiesElement = driver.findElement(By.cssSelector("#W0wltc"));
         rejectAllCookiesElement.click(); 
 
-        String searchText = searchTexString;
+        String searchText = searchTextString;
 
         WebElement searchBoxElement = driver.findElement(By.cssSelector("#APjFqb"));
         searchBoxElement.sendKeys(searchText + Keys.ENTER);
