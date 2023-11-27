@@ -39,7 +39,8 @@ public class RequestAodocsDemo {
         OpenGoogleSearchResult.openAodocsResult(driver, searchTextString);
         ClickAodocsWebElement.clickHomepageButton(driver, "Request a demo");
         String randomEmailString = RandomGenerator.generateRandomAlphanumericString10();
-        FillDemoRequestForm.enterFirstName(driver, "Ray");
+        FillDemoRequestForm.enterFirstNameAndTab(driver, "Ray");
+        Errors.noMsgsDisplayed(driver);
         FillDemoRequestForm.enterLastNameAndTab(driver, "");
         Errors.completeRequiredField(driver);
         FillDemoRequestForm.enterYourEmailAndTab(driver, randomEmailString);
