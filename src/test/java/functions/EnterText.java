@@ -15,9 +15,4 @@ public class EnterText {
         WebElement inputField = driver.findElement(By.cssSelector(selector));
         inputField.sendKeys(inputText + Keys.TAB);
     }
-    
-    public static void viaCssSelectors(WebDriver driver, String inputText, String selector){
-        WebElement inputField = driver.findElement(By.cssSelector(selector));
-        inputField.sendKeys(inputText);
-    }
 }
