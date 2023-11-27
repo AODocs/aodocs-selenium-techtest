@@ -4,9 +4,9 @@ public class UrlResult {
     private String url;
     private Boolean result;
 
-    public UrlResult(String u, Boolean r){
-        url = u;
-        result = r;
+    public UrlResult(String urlString, Boolean resultBoolean){
+        url = urlString;
+        result = resultBoolean;
     }
 
     public String getUrl(){
