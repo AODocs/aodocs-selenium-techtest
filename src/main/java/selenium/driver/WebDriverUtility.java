@@ -20,7 +20,10 @@ public class WebDriverUtility {
             case CHROME:
             default:
                 WebDriverManager.chromedriver().setup();
+                // hardcoded path to faciltate test code implementation
+                System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
                 webDriver = new ChromeDriver(getChromeOptions());
+                break;
         }
         webDriver.manage().window().maximize();
 
@@ -39,6 +42,9 @@ public class WebDriverUtility {
         options.addArguments("lang=en-GB");
         // To start chrome without security warning
         options.addArguments("disable-infobars");
+        // To start Google Chrome for Testing app
+        // hardcoded path to faciltate test code implementation
+        options.addArguments("binary=/Applications/Google Chrome for Testing");
         return options;
     }
 
